@@ -1,0 +1,27 @@
+<%= form_for VacantBuilding.new, :url => "search",:method => :post do |f| %>
+  <%= f.label :fullAddress %>
+  <%= f.text_field :fullAddress, value: "13 W MOUNT VERNON PL" %>
+ 
+  <%= f.submit "Find Details" , id: "submitter" %>
+<% end %>
+
+<hr>
+<%= @coordinates %><br>
+<%= @fullAddress %><br>
+<%= @vb.to_a %>
+<hr>
+array count: <%= @arr %> <br>
+close by: <%= @array %><br>
+<hr>
+<%= VacantBuilding.all.to_a %>
+
+
+
+ <script type="text/javascript">
+$("#submitter").on("click", function(){
+	
+	console.log("hello");
+ 
+});
+	
+ </script>

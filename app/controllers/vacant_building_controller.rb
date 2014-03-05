@@ -1,0 +1,3 @@
+class VacantBuildingController < ApplicationController
+	
+end

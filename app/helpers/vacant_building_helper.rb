@@ -1,0 +1,2 @@
+module VacantBuildingHelper
+end
