@@ -1,5 +1,6 @@
 Vb::Application.routes.draw do
   get "search/index"
+  get "search/howdy"
   match 'search' => 'search#index'
   root to: 'search#index'
   # The priority is based upon order of creation:

@@ -9,13 +9,13 @@ class SearchController < ApplicationController
 
 	  begin
 	  	 @vb = VacantBuilding.find_by(:fullAddress => @q)
-	  	 @inspect = @vb.inspect
-	  	 @coordinates = @vb.coordinates
-	  	 @fullAddress = @vb.fullAddress
+	  	 # @inspect = @vb.inspect
+	  	 # @coordinates = @vb.coordinates
+	  	 # @fullAddress = @vb.fullAddress
 	 	
 	 	 @array = []
 @geowithin = VacantBuilding.collection.find( { :coordinates => { "$geoWithin" =>
-	{ "$center" => [ @vb.coordinates, 0.03 ] }
+	{ "$center" => [ @vb.coordinates, 0.02 ] }
 	} } ).each do |document|
 	 @array << document
 
@@ -31,5 +31,13 @@ end
 	  end
 	 
   end
+
+def howdy
+	respond_to do |format|
+	  format.html # show.html.erb
+	  format.xml  { render :xml => VacantBuilding.all }
+	  format.json { render :json => VacantBuilding.all }
+	end
+end
 
 end
