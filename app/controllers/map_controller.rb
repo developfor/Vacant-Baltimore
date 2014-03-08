@@ -9,7 +9,6 @@ class MapController < ApplicationController
 		begin
 			@vb = VacantBuilding.find_by(:fullAddress => @q)
 			
-
 			@array = []
 			@geowithin = VacantBuilding.collection.find( { :coordinates => { "$geoWithin" => { "$center" => [ @vb.coordinates, 0.02 ] } } } )
 			.each do |document|
@@ -22,6 +21,8 @@ class MapController < ApplicationController
 			  format.json { render :json => @array }
 			end
 		rescue
+
+			
 		end
 	end
 
