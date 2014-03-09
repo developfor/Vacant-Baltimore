@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<link rel="shortcut icon" href="favicon.png" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+
+		<link type="text/plain" rel="author" href="humans.txt" />
+
+		<title>scratch</title>
+
+	</head>
+
+	</body>
+
+		<div class ="wrapper">
+			<div class = "main">
+
+				
+
+					<div id="info">
+  						<div id="info-dropdown">
+  							<div id = "info-text">
+    							<p>Dropdown One</p>
+							</div>
+
+							<div id = "embed-text">
+								DropDown2
+							</div>
+						</div>
+						
+  						<div id = "info-button"></div>
+
+  						<div id = "embed-button">Embed</div>
+					</div>
+
+
+				</div>
+
+
+			</div>
+		
+
+
+		<!-- <img src="images/gdp_widget.jpg"> -->
+
+	</body>
+
+	<script src = "js/vendor/d3.v3.min.js"></script>
+	<script src = "js/vendor/jquery-1.10.2.min.js"></script>
+	<script>
+
+// function Change() {
+//   this.changer = false;
+// }
+
+// Change.prototype.reverse = function(){
+//     this.changer = !this.changer;
+// }
+
+// var change1 = new Change();
+
+function clickInfo(){
+var last;
+$('#info-button, #embed-button').on('click', function(){
+	var current = $(this).attr("id").split('-')[0];
+	current += "-text";
+	toggles(current, last)
+	last = current;
+})
+}//END OF CLICKINFO
+
+function toggles(picked, last){
+
+if($('#info-dropdown').is(':visible')){
+
+	if(picked === last){
+		$('#info-dropdown').slideToggle(300);
+	}else{
+
+		$('#info-dropdown').slideToggle(300, function(){
+	 		$('#info-text').hide();
+  	 		$('#embed-text').hide();
+  	 		$('#'+picked).show();
+  			$('#info-dropdown').slideToggle(300);
+  		});
+	}
+}else{
+	$('#info-text').hide();
+  	 $('#embed-text').hide();
+  	 $('#'+picked).show();
+  	 $('#info-dropdown').slideToggle(300);
+}
+
+
+
+
+}//END OF TOGGLES()
+
+  // $('#info-text').hide();
+  // $('#embed-text').hide();
+  // $('#embed-text').show();
+//    $('#info-dropdown').slideToggle({
+//     direction: "up"
+//   }, 300, function(){
+//   	console.log('hi')
+//   });
+// }
+
+// }
+clickInfo();
+
+// $('#info-button').click(function () {
+
+  
+//   $('#info-text').show();
+//   $('#embed-text').hide();
+//   $('#info-dropdown').slideToggle({
+//     direction: "up"
+//   }, 300); 
+
+//   change1.reverse();
+//   console.log(change1.changer);
+// }); // end click
+
+// $('#embed-button').click(function () {
+//   $('#info-text').hide();
+//   $('#embed-text').show();
+//   $('#info-dropdown').slideToggle({
+//     direction: "up"
+//   }, 300);
+// }); // end click
+
+</script>
+
+
+
+</html>

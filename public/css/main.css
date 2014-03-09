@@ -1,0 +1,383 @@
+@font-face {
+  font-family: 'Droid Sans';
+  font-weight: normal;
+  src: url(../fonts/DroidSans.ttf); 
+}
+
+@font-face {
+  font-family: 'Droid Sans';
+  font-weight: bold;
+  src: url(../fonts/DroidSans-Bold.ttf); 
+}
+
+html, body{
+	font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
+	background: #FFF;
+}
+
+.wrapper-outer{
+ 	display: table; 
+ 	position: absolute; 
+ 	height: 100%; 
+ 	width: 100%;
+ }
+
+.wrapper-middle{
+ 	display: table-cell; 
+ 	/*vertical-align: middle;*/
+}
+
+
+
+.wrapper{
+	margin: 0 auto;
+	width:270px;
+	height: 495px;
+	position: relative;
+}
+
+.main{
+	width: 100%;
+	height: 100%;
+	border:3px solid #346488;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; 
+	-khtml-border-radius: 10px;
+	background-color: #FFF;
+}
+
+
+#title{
+/*	width: 100%;
+	padding: 5px 30px 5px 30px;*/
+	padding: 10px 30px 0px 30px;
+	text-align: center;
+}
+
+#title h1{
+	font-size: 16px;
+	color: #7A7A7A;
+}
+
+#map{
+	width:250px;
+	height: 180px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+
+.location-pic{
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 250px;
+}
+/*directions*/
+
+
+.north-bound{
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 250px;
+	background: #fff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	color: black;
+
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-khtml-border-radius: 5px;
+
+	-webkit-box-shadow: inset 0px 0px 0px 3px #000;
+	-moz-box-shadow: inset 0px 0px 0px 3px #000;
+	box-shadow: inset 0px 0px 0px 3px #000;
+}
+
+.east-bound{
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 250px;
+	background: #009246;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+
+.south-bound{
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 250px;
+	background: #000;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+
+	-webkit-border-radius: 5px;
+border-radius: 5px;
+-khtml-border-radius: 5px;
+}
+
+
+.west-bound{
+	margin: 0 auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 250px;
+	background: #BC1E47;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	color: white;
+
+	-webkit-border-radius: 5px;
+border-radius: 5px;
+-khtml-border-radius: 5px;
+}
+
+
+.title-address{
+
+}
+
+#intersect-loc h1{
+	font-size: 15px !important;
+	/*margin-bottom: 5px;*/
+}
+
+#footer{
+	position: absolute;
+	bottom: -30px;
+	width: 100%;
+}
+
+#logo{
+	/*margin: 5px;*/
+	float: left;
+	background: url("../images/developfor.png")no-repeat;
+	background-size:91px auto;
+	background-repeat:no-repeat;
+	height: 58px;
+	width: 250px;
+	background-position: 160px 0px;
+	text-indent: -9999px; 
+}
+#intro_text{
+	width:250px;
+	margin: 0 auto;
+/*	margin-bottom: 10px;
+	margin-top: 10px;*/
+}
+#intro_text h1{
+	font-weight: bold;
+	font-size: 19px;
+}
+
+#info-button{
+	/*margin: 5px;*/
+	cursor: pointer;
+	float: left;
+	background: url("../images/info-button.png")no-repeat scroll transparent;
+	background-size:75px auto;
+	/*background-repeat:no-repeat;*/
+	height: 35px;
+	width: 35px;
+	background-position: 0px 3px;
+	text-indent: -9999px;
+	position: absolute;
+	top: -6px;
+	left: 4px;
+}
+
+#info-button:hover{
+	background-position: -42px 3px;
+}
+
+#embed-button{
+	float: left;
+	cursor: pointer;
+	position: absolute;
+	left:50px;
+	bottom: 38px;
+	font-style: bold;
+}
+
+#info-close, #embed-close{
+	cursor: pointer;
+	height: 30px;
+	/*width: 100%;*/
+	/*background: red;*/
+	text-align: center;
+	margin: 15px;
+	line-height: 30px;
+
+    
+    border-style: solid;
+border-width: 2px;
+border-radius: 4.776px;
+-moz-border-radius: 4.776px;
+-webkit-border-radius: 4.776px;
+}
+
+#info-close:hover, #embed-close:hover{
+	background: #FBB03B;
+}
+
+#info {
+  position:absolute;
+  bottom: 64px;
+  width: 100%;
+  /*padding-bottom:2%;*/
+  z-index: 100;
+}
+
+#info p{
+	margin-top: 6px;
+	font-size: 12px;
+
+
+}
+#info-dropdown{
+	display:none;
+	background-color: #56636D;
+	color:white;
+	height: 382px;
+	padding-top: 2px;
+	padding-left: 14px;
+	padding-right: 14px;
+	padding-bottom: 15px;
+	overflow: scroll;
+/*	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;*/
+}
+
+#embed-text{
+	display: none;
+
+}
+
+#embed-button p{
+	color: #2E5879;
+}
+
+#embed-button p:hover{
+	color: #FBB03B;
+}
+
+.embed-code{
+background-color: #F1F1F1;
+font-size: 11px;
+margin-top: 5px;
+padding: 5px;
+color: #000;
+}
+
+#source{
+	margin-top: 8px;
+	font-size: 11px;
+}
+
+#source a{
+	margin-left: 4px;
+	font-size: 12px;
+	text-decoration: none;
+	color: white;
+}
+
+#source a:hover{
+	margin-left: 4px;
+	font-size: 12px;
+	text-decoration: none;
+	color: #FBB03B;
+}
+
+.title-header h1{
+	font-size: 30px;
+	color: white;
+	line-height: 50px;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

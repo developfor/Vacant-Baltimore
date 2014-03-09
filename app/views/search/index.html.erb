@@ -1,9 +1,5 @@
-<%= form_for( VacantBuilding.new, :url => "search",:method => :get, :remote => true) do |f| %>
-  <%= f.label :fullAddress %>
-  <%= f.text_field :fullAddress, value: "13 W MOUNT VERNON PL" %>
- 
-  <%= f.submit "Find Details" , id: "submitter" %>
-<% end %>
+<%= render partial: "layouts/search_form" %>
+
 
 <%#= @coordinates %>
 <%#= @fullAddress %>
@@ -19,19 +15,16 @@
 
 <hr>
 <%= VacantBuilding.all.to_a %>
-
-
-
- <script type="text/javascript">
+<script type="text/javascript">
 $("#submitter").on("click", function(){
 	
 	console.log("hello");
  
 });
-	
+
 
 $("form").change(function() {
-    console.log($(this).closest('form').serialize());
+  console.log($(this).closest('form').serialize());
 });
 
 
@@ -44,4 +37,4 @@ $("#submitter").click(function(){
     var formserial = [];
   });
 });
- </script>
+</script>

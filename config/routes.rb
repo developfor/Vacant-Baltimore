@@ -3,6 +3,8 @@ Vb::Application.routes.draw do
   get "search/howdy"
   get "map/index"
   get "map/howdy"
+  get "map/main"
+
 
   match 'search' => 'search#index'
   match 'map' => 'map#index'

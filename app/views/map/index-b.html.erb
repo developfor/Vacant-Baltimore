@@ -1,0 +1,13 @@
+<%= render partial: "layouts/search_form" %>
+
+<hr>
+<b>array count:</b> <countcloseby> </countcloseby> <br>
+<b>close by:</b> <closeby> </closeby><br>
+<hr>
+<b>Addresses of all items:</b><br>
+<% VacantBuilding.all.each do |document| %>
+<%= document.fullAddress %><br>
+<% end %>
+
+<hr>
+<%= VacantBuilding.all.to_a %>
