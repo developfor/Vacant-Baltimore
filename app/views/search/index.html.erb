@@ -4,37 +4,186 @@
 <%#= @coordinates %>
 <%#= @fullAddress %>
 <%#= @vb.to_a %>
-<hr>
-<b>array count:</b> <countcloseby> </countcloseby> <br>
-<b>close by:</b> <closeby> </closeby><br>
-<hr>
-<b>Addresses of all items:</b><br>
-<% VacantBuilding.all.each do |document| %>
-<%= document.fullAddress %><br>
-<% end %>
-
-<hr>
-<%= VacantBuilding.all.to_a %>
-<script type="text/javascript">
-$("#submitter").on("click", function(){
-	
-	console.log("hello");
- 
-});
 
 
-$("form").change(function() {
-  console.log($(this).closest('form').serialize());
-});
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/project.css" />
+	<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
 
 
-$("#submitter").click(function(){
-	var formserial = "search.json?" + $('form').serialize();
-  $.get(formserial ,function(data,status){
-    console.log(data);
-    $("closeby").text(JSON.stringify(data));
-    $("countcloseby").text(data.length);
-    var formserial = [];
-  });
-});
-</script>
+	<title>Page Title</title>
+</head>
+
+<body>
+	<div class ="wrapper-outer">
+		<div class="wrapper-middle">
+			<div class="wrapper">
+				<div class="title">
+					<h1>Main Title</h1>
+				</div>
+				<div id="map"></div>
+				<h1 class="subtitle">SubTitle</h1>
+				<h2 class="sub-subtitle">Sub Sub Title</h2>	
+				<div id = "footer">
+					<div id="info">
+						<div id ="info-dropdown">
+							<div id = "info-text">
+								<h1 id = "info-close">close this section</h1>
+								<div class="scroll-text">
+									<div class="content-text">
+
+										<p>Xxxx xxxxx xxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxx xxxxxx xxxxxxx xxxxxx xxxxxxxxxx.  Xxxxxx xxxxx xxxxxxx xxxxx.  Xxxxxx xxxxxxx xxxxxx xxxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xxxxxx xxx xxx xxxxx xxxxx xxxxxxxxx xxxxx</p>
+
+										<p>Xxxx xxxxx xxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxx xxxxxx xxxxxxx xxxxxx xxxxxxxxxx.  Xxxxxx xxxxx xxxxxxx xxxxx.  Xxxxxx xxxxxxx xxxxxx xxxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xxxxxx xxx xxx xxxxx xxxxx xxxxxxxxx xxxxx</p>
+
+										<p>Xxxx xxxxx xxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxx xxxxxx xxxxxxx xxxxxx xxxxxxxxxx.  Xxxxxx xxxxx xxxxxxx xxxxx.  Xxxxxx xxxxxxx xxxxxx xxxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xxxxxx xxx xxx xxxxx xxxxx xxxxxxxxx xxxxx</p>
+
+										<p>Xxxx xxxxx xxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxx xxxxxx xxxxxxx xxxxxx xxxxxxxxxx.  Xxxxxx xxxxx xxxxxxx xxxxx.  Xxxxxx xxxxxxx xxxxxx xxxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xxxxxx xxx xxx xxxxx xxxxx xxxxxxxxx xxxxx</p>
+
+
+
+										<p id = "source">Sources: 
+											<a href="#" target="_blank">Source One</a>
+											<a href="#" target="_blank">Source Two</a>
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div id = "embed-text">
+								<h1 id = "embed-close">close this section</h1>
+								<div class="scroll-text">
+									<div class="content-text">
+
+										<p>Source URL:</p>
+										<div class="embed-code">
+											http://data.developfor.com/86-academy-awards/
+										</div>
+										<p>Copy and paste the code below into the HTML for your blog or website.</p>
+
+										<div class="embed-code">
+											&lt;iframe style="margin-right: 12px; margin-bottom: 12px; width:275px; float:left;" src="http://developfor.com/" width="275" height="447" scrolling="no" frameborder="0"&gt;&lt;/iframe&gt;
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>  <!-- END INFO DROPDOWN -->
+					</div>
+
+					<div id="embed-button">
+						embed
+					</div>
+					<div id = "info-area">
+						<svg id="info-button" x="0px" y="0px"width="27px" height="27px" > <g> <g> <g> <circle  cx="13.5" cy="13.5" r="13"/> </g> <g> <path fill="#FFFFFF" d="M9.893,20.469c0.065-0.293,0.164-0.68,0.296-1.161l1.784-6.516c0.017-0.075,0.035-0.151,0.05-0.227 c0.012-0.075,0.021-0.146,0.021-0.212c0-0.388-0.124-0.628-0.369-0.723c-0.243-0.093-0.692-0.156-1.344-0.183v-0.766 c0.545-0.037,1.335-0.116,2.371-0.234c1.034-0.117,1.77-0.218,2.201-0.304l1.237-0.242l-2.252,8.257 c-0.19,0.71-0.315,1.201-0.382,1.474c-0.17,0.699-0.255,1.152-0.255,1.359c0,0.208,0.047,0.344,0.143,0.404 c0.095,0.062,0.199,0.092,0.312,0.092c0.292,0,0.658-0.25,1.093-0.751c0.437-0.501,0.82-1.024,1.151-1.573l0.637,0.413 c-0.946,1.387-1.669,2.321-2.17,2.803c-0.822,0.793-1.701,1.19-2.639,1.19c-0.529,0-1.003-0.163-1.423-0.488 c-0.421-0.326-0.633-0.824-0.633-1.494C9.721,21.353,9.779,20.979,9.893,20.469z M16.713,3.997 c0.377,0.377,0.566,0.836,0.566,1.374c0,0.54-0.189,0.999-0.566,1.382c-0.378,0.381-0.834,0.573-1.372,0.573 c-0.541,0-1-0.191-1.381-0.573c-0.382-0.383-0.575-0.842-0.575-1.382c0-0.538,0.193-0.997,0.575-1.374 c0.381-0.378,0.84-0.566,1.381-0.566C15.879,3.43,16.335,3.618,16.713,3.997z"/> </g> </g> </g> </svg>
+					</div>
+					<div id = "logo-area">
+						<a href = "http://developfor.com/" target="_blank"> <div id = "logo"></div> </a>
+					</div>
+				</div>	
+
+			</div>  <!-- END OF WRAPPER OUTER -->
+		</div>  <!-- END OF WRAPPER MIDDLE -->
+	</div>  <!-- END OF WRAPPER -->
+
+	<script src = "js/vendor/d3.v3.min.js"></script>
+	<script src = "js/vendor/jquery-1.11.0.min.js"></script>
+	<script src = "js/vendor/jquery.nicescroll.js"></script>
+	<script src = "js/vendor/leaflet/leaflet.js"></script>
+
+
+
+	<script src = "js/plug.js"></script>
+	<script src = "js/main.js"></script>
+	<!--<script src = "js/project.js"></script> -->
+	<script type="text/javascript">
+
+		var vbFuction = function() {
+		  // Handler for .ready() called.
+		  	// http://localhost:3000/search.json?utf8=%E2%9C%93&vacant_building%5Blat%5D=-76.6331659571&vacant_building%5Blog%5D=39.2973522251
+	  // console.log(geojsonFeature);
+		
+		// console.log(geojsonFeature[1]["coordinates"][0]);
+
+		// create a map in the "map" div, set the view to a given place and zoom
+		var map = L.map('map').setView([39.297352225099999, -76.633165957100005], 16);
+
+		// add an OpenStreetMap tile layer
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+
+		 // var list = [[51.5, -0.09],[51.52, -0.09],[51.51, -0.09],[51.52, -0.08]];
+		 var list = geojsonFeature
+		 var locArray = [];
+
+		// locArray.push(list);
+		list.forEach(function(entry) {
+			console.log(entry["coordinates"])
+		   var marker = L.marker(entry["coordinates"].reverse()).addTo(map)
+		    	.bindPopup(entry["fullAddress"]);
+		    	// .openPopup();
+		    	// console.log(marker);
+		    	locArray.push(marker);
+		});
+
+
+		var offswitch = 0
+		map.on("dragend", function(){	
+			// if (offswitch == 0){
+				// console.log(marker);
+				// console.log(map.getCenter());
+				var lat = map.getCenter()["lat"]
+				var log =  map.getCenter()["lng"]
+
+
+				locArray.forEach(function(entry) {
+				   map.removeLayer(entry);
+				});
+				$.getJSON('/search.json?utf8=%E2%9C%93&vacant_building%5Blat%5D='+log+'&vacant_building%5Blog%5D='+ lat, function(result) {
+		    geojsonFeature = result;
+		    			result.forEach(function(entry) {
+		   		var marker = L.marker(entry["coordinates"].reverse()).addTo(map)
+		    			.bindPopup(entry["fullAddress"]);
+		    			// console.log(marker);
+		    			locArray.push(marker);
+		});
+		});
+				// var marker = L.marker([getRandomArbitary(51.48, 51.5 ), getRandomArbitary(-0.07, -0.075 )]).addTo(map).bindPopup("howdy");
+				// var markerA = L.marker([getRandomArbitary(51.48, 51.5  ), getRandomArbitary(-0.07, -0.075 )]).addTo(map).bindPopup("howdy");
+
+				// console.log("hi");
+				// locArray = [];
+				// locArray.push(marker);
+				// locArray.push(markerA);
+			// }
+			// offswitch = 1
+		});
+
+		}
+
+ 		var geojsonFeature;
+
+
+		// $.getJSON('data/Baltimore_Fixed_Speed_Cameras.json', function(result) {
+		// $.getJSON('data/Baltimore_Fixed_Speed_Cameras.json', function(result) {
+		$.getJSON('/search.json?utf8=%E2%9C%93&vacant_building%5Blat%5D=-76.6331659571&vacant_building%5Blog%5D=39.2973522251', function(result) {
+		    geojsonFeature = result;
+		    vbFuction();
+		});
+
+	</script>
+</body>
+</html>
+
+
+
