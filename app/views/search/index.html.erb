@@ -1,11 +1,8 @@
 <%= render partial: "layouts/search_loc_form" %>
 
-
 <%#= @coordinates %>
 <%#= @fullAddress %>
 <%#= @vb.to_a %>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="css/leaflet.css" />
 
 
-	<title>Page Title</title>
+	<title>Baltimore</title>
 </head>
 
 <body>
@@ -28,7 +25,7 @@
 		<div class="wrapper-middle">
 			<div class="wrapper">
 				<div class="title">
-					<h1>Main Title</h1>
+					<h1>Baltimore Vacant Buildings</h1>
 				</div>
 				<div id="map"></div>
 				<h1 class="subtitle">SubTitle</h1>
@@ -118,7 +115,7 @@
 		var map = L.map('map').setView([39.297352225099999, -76.633165957100005], 16);
 
 		// add an OpenStreetMap tile layer
-		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 		    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 
