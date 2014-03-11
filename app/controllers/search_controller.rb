@@ -5,6 +5,7 @@ class SearchController < ApplicationController
 			@lat = params[:vacant_building][:lat]	   
 		    @log = params[:vacant_building][:log]
 		    @vb_coor = [ @lat.to_f, @log.to_f]
+		    
 		rescue
 		end
 
@@ -15,7 +16,7 @@ class SearchController < ApplicationController
 			 
 			# VacantBuilding.limit(50).geo_near(@vb_coor).spherical
 			# @geowithin = VacantBuilding.collection.find( { :coordinates => { "$geoWithin" => { "$center" => [ @vb_coor, 5 ] } } } ).limit(200)
-			VacantBuilding.limit(300).geo_near(@vb_coor)#.spherical
+			VacantBuilding.limit(300).geo_near(@vb_coor)
 			.each do |document|
 				@array << document
 			end	
@@ -28,6 +29,16 @@ class SearchController < ApplicationController
 			  move_json = format.json { render :json => @array }
 			end
 		rescue
+		end
+	end
+	def address_search
+		@location = params[:vacant_building][:searchLocation].upcase
+			@get_address = Geokit::Geocoders::GoogleGeocoder.geocode(@location)
+			puts @get_address
+		respond_to do |format|
+		  format.html
+		  format.xml  { render :xml => @get_address }
+		  format.json { render :json => @get_address }
 		end
 	end
 	def howdy

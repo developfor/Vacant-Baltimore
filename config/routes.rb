@@ -1,6 +1,7 @@
 Vb::Application.routes.draw do
   get "search/index"
   get "search/howdy"
+  get "search/address_search"
   get "map/index"
   get "map/howdy"
   get "map/main"
