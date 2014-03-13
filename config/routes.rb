@@ -1,15 +1,18 @@
 Vb::Application.routes.draw do
+  root to: 'search#index'
+  
   get "search/index"
+  get "search/desktop"
   get "search/howdy"
   get "search/address_search"
   get "map/index"
   get "map/howdy"
   get "map/main"
 
-
+  match 'desktop' => 'search#desktop'
   match 'search' => 'search#index'
   match 'map' => 'map#index'
-  root to: 'search#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

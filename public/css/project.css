@@ -6,4 +6,19 @@
 	margin-bottom: 10px;
 	margin-top: 10px;
 	z-index: 0;
+	position: relative;
+}
+
+.spinner-loader{
+position: absolute;
+z-index: 100;
+/*left: 50%;
+margin: 0 auto;
+top: 110px;
+width:250px;
+height: 220px;*/
+width: 250px;
+height: 220px;
+line-height: 220px;
+text-align: center;
 }
