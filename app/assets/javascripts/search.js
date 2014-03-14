@@ -32,7 +32,7 @@ var vbIcon = L.divIcon({
         attribution: osmAttrib
     });
 
-    map.setMaxBounds([[39.42452501272267, -76.3275146484375], [39.155622393423215, -76.89743041992188]]);
+    // map.setMaxBounds([[39.42452501272267, -76.3275146484375], [39.155622393423215, -76.89743041992188]]);
      // start the map in Baltimore
     map.addLayer(osm);
     map.addLayer(markers);
