@@ -3,14 +3,44 @@ var vbIcon = L.divIcon({
 	className: 'svg-marker',
     html:  '<div><svg width="14" height="16"> <circle r="6" cx="7" cy="7" style="fill: #e5d6ac; fill-opacity: 0.5; stroke-width: 1.5px; stroke: #EE2D5A ;"></circle></svg></div>'});
 
+	 
+	 // other map styles
 	 // http://b.sm.mapstack.stamen.com/(toner,$fff[@40],$2e5879[hsl-color])/14/3744/6745.png
-	 map = L.map('map').setView([39.297352225099999, -76.633165957100005], 16);
 	 // http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png
-	// L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+	 // L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 	 // L.tileLayer('http://b.sm.mapstack.stamen.com/toner/{z}/{x}/{y}.png', {
-	 	L.tileLayer('http://b.sm.mapstack.stamen.com/(toner,$fff[@30],$666[hsl-color])/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);
+
+
+	 map = L.map('map',{zoomControl:false});
+	 new L.control.zoom({position: 'topright'}).addTo(map);
+	// marker cluster
+	 var markers = new L.MarkerClusterGroup({
+        showCoverageOnHover: false,
+        animateAddingMarkers:true,
+        maxClusterRadius: 40,
+        chunkedLoading: true,
+        disableClusteringAtZoom: 15
+     });
+
+
+	var osmUrl = 'http://b.sm.mapstack.stamen.com/(toner,$fff[@30],$666[hsl-color])/{z}/{x}/{y}.png';
+
+    var osmAttrib = 'Tiles courtesy of Stamen.';
+    var osm = new L.TileLayer(osmUrl, {
+        minZoom: 10,
+        maxZoom: 20,
+        attribution: osmAttrib
+    });
+
+    map.setMaxBounds([[39.42452501272267, -76.3275146484375], [39.155622393423215, -76.89743041992188]]);
+     // start the map in Baltimore
+    map.addLayer(osm);
+    map.addLayer(markers);
+    map.setView([39.297352225099999, -76.633165957100005], 17);
+
+	//  	L.tileLayer('http://b.sm.mapstack.stamen.com/(toner,$fff[@30],$666[hsl-color])/{z}/{x}/{y}.png', {
+	// 	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	// }).addTo(map);
 
 	var list = geojsonFeature
 	var locArray = [];
@@ -18,22 +48,27 @@ var vbIcon = L.divIcon({
 
 	list.forEach(function(entry) {
 			// console.log(entry["coordinates"])
-			var marker = new L.marker(entry["coordinates"].reverse(), { icon: vbIcon, title: entry["fullAddress"], lat: entry["coordinates"][0], log: entry["coordinates"][1], noticeDate: entry["noticeDate"]}).addTo(map)
-			.bindPopup(entry["fullAddress"]);
+
+
+			var marker = new L.marker(entry["coordinates"].reverse(), { icon: vbIcon, title: entry["fullAddress"], lat: entry["coordinates"][0], log: entry["coordinates"][1], noticeDate: entry["noticeDate"]}).bindPopup(entry["fullAddress"]);
+			markers.addLayer(marker);
 			marker.on('click', function(){
+			
+
 				$(".sub-subtitle").html(entry["fullAddress"]+ "<br>"+ "<b>Vacant Since:</b> "+ entry["noticeDate"] );
 				// console.log(entry["fullAddress"]);
 				// console.log(this.options)
 				// var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.latitude+","+this.options.longitude+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
-
+console.log(entry)
 				var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
 
 
-            	$("#intro_text").html(imgLocation);
+            	$("#intro-text").html(imgLocation);
 
 			});
 
 			locArray.push(marker);
+			locArray.push(markers);
 		});
 
 
@@ -41,7 +76,16 @@ var vbIcon = L.divIcon({
 
 		var lat = map.getCenter()["lat"]
 		var log =  map.getCenter()["lng"]
-		
+
+		var markers = new L.MarkerClusterGroup({
+        showCoverageOnHover: false,
+        animateAddingMarkers:true,
+        maxClusterRadius: 40,
+        chunkedLoading: true,
+        disableClusteringAtZoom: 15
+     	});
+     	map.addLayer(markers);
+
 		
 
 		locArray.forEach(function(entry) {
@@ -55,17 +99,25 @@ var vbIcon = L.divIcon({
 			$(".spinner-loader").fadeOut(1000);
 			geojsonFeature = result;
 			result.forEach(function(entry) {
-				var marker = new L.marker(entry["coordinates"].reverse(), { icon: vbIcon, title: entry["fullAddress"], lat: entry["coordinates"][0], log: entry["coordinates"][1], noticeDate: entry["noticeDate"]}).addTo(map)
+				var marker = new L.marker(entry["coordinates"].reverse(), { icon: vbIcon, title: entry["fullAddress"], lat: entry["coordinates"][0], log: entry["coordinates"][1], noticeDate: entry["noticeDate"]})
 				.bindPopup(entry["fullAddress"]);
-				marker.on('click', function(){console.log(entry["fullAddress"])
+
+				markers.addLayer(marker);
+
+				marker.on('click', function(){
+
+					// console.log(entry["fullAddress"])
+
 					$(".sub-subtitle").html(entry["fullAddress"]+ "<br>"+entry["noticeDate"]);
 					var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
-            		$("#intro_text").html(imgLocation);
+					// console.log(this.options.lat);
+            		$("#intro-text").html(imgLocation);
 
 			});
 
 
 				locArray.push(marker);
+				locArray.push(markers);
 
 			});
 		});

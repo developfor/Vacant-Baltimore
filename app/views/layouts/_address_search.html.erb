@@ -1,6 +1,6 @@
 <%= form_for( VacantBuilding.new, :url => "search/address_search",:method => :get, :remote => true) do |f| %>
   <%#= f.label :searchLocation %>
-  <%= f.text_field :searchLocation, value: "",  size: 25, :placeholder => "Enter Address" %>
+  <%= f.text_field :searchLocation, value: "",  size: 20, :placeholder => "enter address" %>
  
   <%= f.submit "Go" , id: "submitter" %>
 <% end %>
@@ -12,9 +12,12 @@ $("#submitter").on("click", function(){
 	
 	$.getJSON('http://localhost:3000/search/address_search?utf8=%E2%9C%93&'+$('#vacant_building_searchLocation').serialize()+'&commit=Find+Details', function(result) {
 
+		// if(){
+
+		// }
+		// console.log(result["lat"]);
 		
-		
-		map.panTo(new L.LatLng(result["lat"], result["lng"])).zoomIn(18);
+		map.panTo(new L.LatLng(result["lat"], result["lng"])).setZoom(19);
 		map.fire('dragend');
 
 		// console.log(<%= @get_address.to_s %>);

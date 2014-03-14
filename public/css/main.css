@@ -35,13 +35,15 @@ html, body{
 	-webkit-border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	border-radius: 5px; 
-	border: 2px solid #666;
+	border: 2px solid #C9C9C9;
 	position: relative;
 	background-color: #FFF;
 }
 .title{
 	margin-top: 10px;
-	margin-bottom: 5px;
+margin-bottom: 5px;
+border-bottom: 2px solid #C9C9C9;
+padding-bottom: 10px;
 }
 .subtitle{
 margin-top: 5px;
@@ -62,12 +64,16 @@ a{text-decoration: none;
 
 h1{
 	text-align: center;
-	font-size: 16px;
+	font-size: 17px;
 }
 
 h2{
 	text-align: center;
 	font-size: 14px;
+}
+
+.title h1{
+	font-weight: bold;
 }
 
 #viz{
@@ -86,6 +92,7 @@ h2{
 	position: absolute;
 	bottom: -30px;
 	width: 100%;
+	z-index: 1000;
 }
 
 #logo-area{
@@ -152,7 +159,7 @@ h2{
 	position:absolute;
 	bottom: 70px;
 	width: 100%;
-	z-index: 100;
+	
 	overflow: hidden;
 }
 
@@ -188,6 +195,7 @@ h2{
 	display: none;
 }
 #embed-button{
+	z-index: 1000;
 	position: absolute;
 	left: 45px;
 	bottom: 40px;
