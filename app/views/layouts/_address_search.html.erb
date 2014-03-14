@@ -8,52 +8,20 @@
 <script type="text/javascript">
 
 $("#submitter").on("click", function(){
-
-
-	// console.log($('#vacant_building_searchLocation').serialize())
+	console.log($('#vacant_building_searchLocation').serialize())
 	
-	$.getJSON('/search/address_search?utf8=%E2%9C%93&'+$('#vacant_building_searchLocation').serialize()+'&commit=Find+Details', function(result) {
-
-		if(result["lat"] == null){
-			map.panTo(new L.LatLng(39.2976079 , -76.633899 )).setZoom(17);
-		}else{
-		    map.panTo(new L.LatLng(result["lat"], result["lng"])).setZoom(17);
-		}
-		// console.log(result["lat"]);
-		// console.log(result["lng"]);
+	$.getJSON('search/address_search?utf8=%E2%9C%93&'+$('#vacant_building_searchLocation').serialize()+'&commit=Find+Details', function(result) {
 
 		
+		if(result["lng"] != null){
+		map.panTo(new L.LatLng(result["lat"], result["lng"])).setZoom(17);
 		map.fire('dragend');
-
+		}
 		// console.log(<%= @get_address.to_s %>);
 
 	});
 
 }); 
-
-
-
-
-
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition);
-    }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
-  }
-function showPosition(position)
-  {
-  x.innerHTML="Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;	
-  }
-
-
-
-
-
-
 
 
 </script>
