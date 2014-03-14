@@ -12,12 +12,15 @@ $("#submitter").on("click", function(){
 	
 	$.getJSON('http://localhost:3000/search/address_search?utf8=%E2%9C%93&'+$('#vacant_building_searchLocation').serialize()+'&commit=Find+Details', function(result) {
 
-		// if(){
-
-		// }
+		if(result["lat"] == null){
+			map.panTo(new L.LatLng(39.2976079 , -76.633899 )).setZoom(17);
+		}else{
+		    map.panTo(new L.LatLng(result["lat"], result["lng"])).setZoom(17);
+		}
 		// console.log(result["lat"]);
+		// console.log(result["lng"]);
+
 		
-		map.panTo(new L.LatLng(result["lat"], result["lng"])).setZoom(19);
 		map.fire('dragend');
 
 		// console.log(<%= @get_address.to_s %>);
