@@ -53,23 +53,40 @@ var vbIcon = L.divIcon({
 			var marker = new L.marker(entry["coordinates"].reverse(), { icon: vbIcon, title: entry["fullAddress"], lat: entry["coordinates"][0], log: entry["coordinates"][1], noticeDate: entry["noticeDate"]}).bindPopup(entry["fullAddress"]);
 			markers.addLayer(marker);
 			marker.on('click', function(){
-			
+
 
 				$(".sub-subtitle").html(entry["fullAddress"]+ "<br>"+ "<b>Vacant Since:</b> "+ entry["noticeDate"] );
 				// console.log(entry["fullAddress"]);
 				// console.log(this.options)
 				// var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.latitude+","+this.options.longitude+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
-console.log(entry)
-				var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
+// console.log(entry)
+				// var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
 
 
-            	$("#intro-text").html(imgLocation);
+    //         	$("#intro-text").html(imgLocation);
+            	// setTimeout($("#intro-text").html(imgLocation), 20000);
 
-			});
 
-			locArray.push(marker);
+            	var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
+
+				$(imgLocation).load(function() {
+				    // alert('Image Loaded');
+				    // console.log(imgLocation);
+				    var imgLoc = imgLocation[0].outerHTML;
+            		$("#intro-text").html("<div class='location-pic'>"+ imgLoc + "</div> ");
+
+
+				});
+
+
+
+            	
+				});
+
+			// locArray.push(marker);
 			locArray.push(markers);
 		});
+
 
 
 	map.on("dragend", function(){	
@@ -109,14 +126,25 @@ console.log(entry)
 					// console.log(entry["fullAddress"])
 
 					$(".sub-subtitle").html(entry["fullAddress"]+ "<br>"+entry["noticeDate"]);
-					var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
-					// console.log(this.options.lat);
-            		$("#intro-text").html(imgLocation);
+					// var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
+					// // console.log(this.options.lat);
+     //        		$("#intro-text").html(imgLocation);
+     				
+
+				     var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
+
+				     $(imgLocation).load(function() {
+								    var imgLoc = imgLocation[0].outerHTML;
+								    $("#intro-text").html("<div class='location-pic'>"+ imgLoc + "</div> ");
+								});
+
+
+
 
 			});
 
 
-				locArray.push(marker);
+				// locArray.push(marker);
 				locArray.push(markers);
 
 			});

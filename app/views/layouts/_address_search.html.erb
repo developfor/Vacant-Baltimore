@@ -4,7 +4,7 @@
  
   <%= f.submit "Go" , id: "submitter" %>
 <% end %>
-<div id="findme">:)</div>
+
 <script type="text/javascript">
 
 $("#submitter").on("click", function(){
@@ -22,29 +22,6 @@ $("#submitter").on("click", function(){
 	});
 
 }); 
-
-
-$("#findme").on("click", function(){
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition);
-    }
-    else{x.innerHTML="Geolocation is not supported by this browser.";}
-  }
-
-function showPosition(position)
-  {
- console.log(position.coords.latitude);
- console.log(position.coords.longitude);
- console.log(position);
-  map.panTo(new L.LatLng(position.coords.latitude, position.coords.longitude)).setZoom(17);
-  map.fire('dragend');
-  }
-  getLocation();
-});
-
 
 
 </script>
