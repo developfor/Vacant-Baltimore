@@ -28,7 +28,9 @@ class SearchController < ApplicationController
 			  format.html
 			  format.xml  { render :xml => @array }
 			  move_json = format.json { render :json => @array }
+
 			end
+			render json: move_json 
 		rescue
 		end
 	end
