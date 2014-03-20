@@ -17,7 +17,7 @@ class SearchController < ApplicationController
 			 
 			# VacantBuilding.limit(50).geo_near(@vb_coor).spherical
 			# @geowithin = VacantBuilding.collection.find( { :coordinates => { "$geoWithin" => { "$center" => [ @vb_coor, 5 ] } } } ).limit(200)
-			VacantBuilding.limit(200).geo_near(@vb_coor)
+			VacantBuilding.limit(20).geo_near(@vb_coor)
 			.each do |document|
 				@array << document
 			end	
