@@ -12,7 +12,7 @@ group :development, :test do
 	gem "factory_girl", "~> 4.4.0"
 	   
 end
-gem 'rails-api'
+
 gem "mongoid", "~> 3.1.6"
 
 # Gems used only for assets and not required
