@@ -1,0 +1,35 @@
+time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type
+2014-02-28T21:40:56.000Z,59.8316,-152.566,98.3,2.7,ml,,,,0.7,ak,ak11172530,2014-02-28T21:53:29.660Z,"41km W of Anchor Point, Alaska",earthquake
+2014-02-28T19:47:42.060Z,1.2696,126.3103,52.33,4.7,mb,,57,1.166,1.31,us,usb000myji,2014-02-28T22:39:42.000Z,"127km E of Bitung, Indonesia",earthquake
+2014-02-28T19:41:14.170Z,-28.4585,-176.5695,6.81,5.1,mb,,64,11.106,1.24,us,usb000myj9,2014-02-28T20:20:38.000Z,"157km NE of Raoul Island, New Zealand",earthquake
+2014-02-28T19:37:31.000Z,59.8006,-152.716,90.6,2.6,ml,,,,0.32,ak,ak11172453,2014-02-28T19:51:07.180Z,"49km W of Anchor Point, Alaska",earthquake
+2014-02-28T19:14:37.310Z,12.7664,-88.8336,56.78,4.3,mb,,173,0.993,1.07,us,usb000myif,2014-02-28T20:05:20.000Z,"64km SSW of Puerto El Triunfo, El Salvador",earthquake
+2014-02-28T19:08:01.000Z,51.6142,-175.3217,36.4,3.2,ml,,,,0.55,ak,ak11172444,2014-02-28T19:55:15.103Z,"96km ESE of Adak, Alaska",earthquake
+2014-02-28T19:05:52.770Z,13.9859,-92.1354,40.09,4.9,mb,,128,0.682,1.26,us,usb000myht,2014-02-28T19:46:23.017Z,"42km SW of Champerico, Guatemala",earthquake
+2014-02-28T18:05:34.000Z,57.5138,-154.4534,24.5,2.7,ml,,,,0.96,ak,ak11172412,2014-02-28T23:00:07.000Z,"28km W of Larsen Bay, Alaska",earthquake
+2014-02-28T17:48:34.370Z,-7.4632,124.835,380.63,4.3,mb,,38,2.345,0.79,us,usb000myel,2014-02-28T22:48:45.000Z,"145km NW of Dili, East Timor",earthquake
+2014-02-28T17:38:53.190Z,14.0569,-92.153,49.01,4.2,mb,,174,0.64,1.29,us,usb000myci,2014-02-28T19:24:05.203Z,"37km SW of Champerico, Guatemala",earthquake
+2014-02-28T17:22:11.800Z,14.114,-92.0689,56.82,4.8,mb,,154,0.543,0.93,us,usb000mybu,2014-02-28T18:44:34.000Z,"26km SW of Champerico, Guatemala",earthquake
+2014-02-28T16:45:28.000Z,64.4616,-150.2086,12,2.5,ml,,,,0.88,ak,ak11172373,2014-02-28T16:58:59.969Z,"54km WSW of North Nenana, Alaska",earthquake
+2014-02-28T16:31:29.190Z,-33.1043,-71.9789,28.22,4.9,mb,,157,0.819,1.34,us,usb000myaf,2014-02-28T16:48:10.527Z,"33km WSW of Valparaiso, Chile",earthquake
+2014-02-28T15:30:50.020Z,-52.5284,25.9589,10,4.9,mb,,119,20.481,1,us,usb000my9c,2014-02-28T23:33:19.772Z,"South of Africa",earthquake
+2014-02-28T14:29:09.500Z,19.0811,-64.6932,36,3.1,Md,9,280.8,0.66475331,0.1,pr,pr14059003,2014-02-28T22:31:48.958Z,"73km N of Road Town, British Virgin Islands",earthquake
+2014-02-28T12:54:35.060Z,12.2341,-73.6042,10,4.8,mb,,40,1.666,1,us,usb000my6i,2014-02-28T20:57:13.512Z,"107km NW of Riohacha, Colombia",earthquake
+2014-02-28T10:58:47.770Z,20.1777,120.222,10.1,4.6,mb,,121,2.621,1.41,us,usb000my5t,2014-02-28T19:01:27.793Z,"173km W of Sabtang, Philippines",earthquake
+2014-02-28T10:40:17.000Z,62.8429,-149.5101,62.7,2.6,ml,,,,0.98,ak,ak11172302,2014-02-28T20:11:41.428Z,"65km NNE of Talkeetna, Alaska",earthquake
+2014-02-28T10:29:58.070Z,-4.4493,125.8768,407.38,4.7,mb,,43,4.59,0.84,us,usb000my5g,2014-02-28T18:32:28.626Z,"102km SW of Leksula, Indonesia",earthquake
+2014-02-28T09:09:58.740Z,52.2706,159.7425,48.49,4.8,mb,,151,1.005,1.26,us,usb000my24,2014-02-28T17:12:39.424Z,"113km SE of Petropavlovsk-Kamchatskiy, Russia",earthquake
+2014-02-28T09:08:21.800Z,19.3848,-155.2417,2.9,2.6,Ml,,43.2,0.00898315,0.09,hv,hv60648551,2014-02-28T22:06:12.782Z,"5km S of Volcano, Hawaii",earthquake
+2014-02-28T08:56:03.000Z,54.3969,-161.3952,27.6,2.9,ml,,,,0.34,ak,ak11172278,2014-02-28T19:58:22.308Z,"119km SSW of Sand Point, Alaska",earthquake
+2014-02-28T08:10:42.190Z,42.7614,96.5055,13.98,4.5,mb,,57,6.508,1.36,us,usb000my1i,2014-02-28T16:13:18.005Z,"242km SSE of Bayan-Ovoo, Mongolia",earthquake
+2014-02-28T07:49:13.210Z,-17.2026,-171.969,10,4.8,mb,,100,2.691,1.17,us,usb000my1e,2014-02-28T15:51:53.975Z,"235km SE of Hihifo, Tonga",earthquake
+2014-02-28T05:50:37.790Z,7.4084,94.3208,87.35,5.1,mb,,83,3.391,0.95,us,usb000my0i,2014-02-28T13:53:15.826Z,"126km ESE of Mohean, India",earthquake
+2014-02-28T04:39:21.900Z,19.1648,-66.8072,38,2.8,Md,8,288,0.73212696,0.31,pr,pr14059002,2014-02-28T07:59:12.753Z,"75km N of Hatillo, Puerto Rico",earthquake
+2014-02-28T03:02:26.000Z,51.0449,-176.05,31.1,2.9,ml,,,,0.36,ak,ak11172266,2014-02-28T07:16:51.839Z,"102km SSE of Adak, Alaska",earthquake
+2014-02-28T02:48:08.540Z,-15.9309,-13.0555,10,5.3,mb,,71,7.031,1.05,us,usb000mxzt,2014-02-28T10:50:56.091Z,"Southern Mid-Atlantic Ridge",earthquake
+2014-02-28T02:28:39.250Z,20.2137,120.2989,35,4.9,mb,,111,2.651,0.89,us,usb000mxzr,2014-02-28T10:31:17.638Z,"164km W of Sabtang, Philippines",earthquake
+2014-02-28T01:47:24.000Z,51.0236,-176.047,25.6,3.3,ml,,,,0.35,ak,ak11172210,2014-02-28T09:49:52.827Z,"104km SSE of Adak, Alaska",earthquake
+2014-02-28T01:25:36.800Z,18.9108,-66.8888,64,3,Md,5,288,0.54976895,0.38,pr,pr14059001,2014-02-28T04:17:18.696Z,"47km N of Hatillo, Puerto Rico",earthquake
+2014-02-28T01:21:21.000Z,52.0597,179.6184,85.7,3.5,ml,,,,0.45,ak,ak11172204,2014-02-28T09:23:53.376Z,"12km N of Semisopochnoi Island, Alaska",earthquake
+2014-02-28T00:51:47.000Z,19.0216,-66.7762,54,3.3,Md,13,270,0.58929483,0.34,pr,pr14059000,2014-02-28T03:59:33.863Z,"59km N of Hatillo, Puerto Rico",earthquake
+2014-02-28T00:38:08.000Z,61.3014,-151.0863,53.3,2.5,ml,,,,0.74,ak,ak11172197,2014-02-28T08:40:43.490Z,"64km W of Anchorage, Alaska",earthquake
