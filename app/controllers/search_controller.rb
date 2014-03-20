@@ -85,15 +85,13 @@ class SearchController < ApplicationController
 	end
 
 	def load_markers
-		begin
+		
 			@lat = params[:vacant_building][:lat]	   
 		    @log = params[:vacant_building][:log]
-		    @vb_coor = [ @lat.to_f, @log.to_f]
-		    
-		rescue
-		end
+		    @vb_coor = [ @lat.to_f, @log.to_f]    
+		
 
-		begin
+		
 		    # @vb = VacantBuilding.find_by(coordinates: [-76.5677218731, 39.2919877174])
 
 
@@ -116,8 +114,7 @@ class SearchController < ApplicationController
 
 			end
 			# render json: move_json 
-		rescue
-		end
+		
 	end
 
 

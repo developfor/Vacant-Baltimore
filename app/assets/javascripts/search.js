@@ -110,7 +110,7 @@ var vbIcon = L.divIcon({
 		});
 		// preloader begin
 		$(".spinner-loader").show();
-		$.getJSON('/search/load_markers.json?utf8=%E2%9C%93&vacant_building%5Blat%5D='+log+'&vacant_building%5Blog%5D='+ lat, function(result) {
+		$.getJSON('/search/load_markers.json?utf8=&vacant_building%5Blat%5D='+log+'&vacant_building%5Blog%5D='+ lat, function(result) {
 			// preloader end
 			// $(".spinner-loader").hide();
 			$(".spinner-loader").fadeOut(1000);
