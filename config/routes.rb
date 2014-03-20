@@ -5,6 +5,8 @@ Vb::Application.routes.draw do
   get "search/desktop"
   get "search/howdy"
   get "search/intial_load"
+  get "search/load_markers"
+  
   get "search/address_search"
   get "map/index"
   get "map/howdy"
