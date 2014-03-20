@@ -21,17 +21,23 @@ body{
 
 .spinner-loader{
 position: absolute;
+top: 0;
+left: -100;
 z-index: 100;
 /*left: 50%;
 margin: 0 auto;
 top: 110px;
 width:250px;
 height: 220px;*/
-width: 250px;
-height: 220px;
-line-height: 220px;
-text-align: center;
+/*width: 50px;
+height: 20px;*/
+/*line-height: 220px;*/
+/*text-align: center;*/
+ font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
+ font-size: 12px;
  pointer-events:none;
+ color:  #EE2D5A ;
+ background-color: white;
 }
 
 .marker-circle{
