@@ -30,7 +30,7 @@ class SearchController < ApplicationController
 			  move_json = format.json { render :json => @array }
 
 			end
-			render json: move_json 
+			# render json: move_json 
 		rescue
 		end
 	end
