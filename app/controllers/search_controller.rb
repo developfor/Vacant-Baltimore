@@ -27,7 +27,7 @@ class SearchController < ApplicationController
 			respond_to do |format|
 			  format.html
 			  format.xml  { render :xml => @array }
-			  format.json { render :json => @array }
+			  format.js { render :json => @array }
 
 			end
 			# render json: move_json 
