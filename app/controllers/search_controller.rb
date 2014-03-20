@@ -111,7 +111,8 @@ class SearchController < ApplicationController
 			respond_to do |format|
 			  format.html
 			  format.xml  { render :xml => @array, status: :ok }
-			  format.json { render :json => @array, status: :ok }
+			  # format.json { render :json => @array, status: :ok }
+			  format.json { render status: 200, json: @array.to_json}
 
 			end
 			# render json: move_json 
