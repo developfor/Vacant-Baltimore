@@ -160,6 +160,7 @@ var geojsonFeature;
 
 // $.getJSON('/search.json?utf8=%E2%9C%93&vacant_building%5Blat%5D=-76.6331659571&vacant_building%5Blog%5D=39.2973522251', function(result) {
 $.getJSON('/search/intial_load.json', function(result) {
+	
 	// preloader end
 	// $(".spinner-loader").hide();
 	$(".spinner-loader").fadeOut(1000);
