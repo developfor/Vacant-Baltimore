@@ -76,11 +76,19 @@ class SearchController < ApplicationController
 	# 	  format.json { render :json => @get_address }
 	# 	end
 	# end
-	# def howdy
-	# 	respond_to do |format|
-	# 	  format.html
-	# 	  format.xml  { render :xml => VacantBuilding.all }
-	# 	  format.json { render :json => VacantBuilding.all }
-	# 	end
-	# end
+	def intial_load
+		respond_to do |format|
+		  format.html
+		  format.xml  { render :xml => VacantBuilding.all }
+		  format.json { render :json => VacantBuilding.limit(200).all }
+		end
+	end
+
+	def howdy
+		respond_to do |format|
+		  format.html
+		  format.xml  { render :xml => VacantBuilding.all }
+		  format.json { render :json => VacantBuilding.all }
+		end
+	end
 end

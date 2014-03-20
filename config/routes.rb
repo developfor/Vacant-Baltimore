@@ -4,10 +4,12 @@ Vb::Application.routes.draw do
   get "search/index"
   get "search/desktop"
   get "search/howdy"
+  get "search/intial_load"
   get "search/address_search"
   get "map/index"
   get "map/howdy"
   get "map/main"
+
 
   match 'desktop' => 'search#desktop'
   match 'search' => 'search#index'
