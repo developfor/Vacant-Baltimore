@@ -22,7 +22,7 @@ class SearchController < ApplicationController
 				@array << document
 			end	
 
-			puts @array.count
+			# puts @array.count
 
 			respond_to do |format|
 			  format.html
@@ -54,7 +54,7 @@ class SearchController < ApplicationController
 				@array << document
 			end	
 
-			puts @array.count
+			# puts @array.count
 
 			respond_to do |format|
 			  format.html
@@ -67,7 +67,7 @@ class SearchController < ApplicationController
 	def address_search
 			@location = params[:vacant_building][:searchLocation].upcase
 			@get_address = Geokit::Geocoders::GoogleGeocoder.geocode(@location)
-			puts @get_address
+			# puts @get_address
 		respond_to do |format|
 		  format.html
 		  format.xml  { render :xml => @get_address }
