@@ -66,16 +66,16 @@ class SearchController < ApplicationController
 	# 	rescue
 	# 	end
 	# end
-	# def address_search
-	# 		@location = params[:vacant_building][:searchLocation].upcase
-	# 		@get_address = Geokit::Geocoders::GoogleGeocoder.geocode(@location)
-	# 		# puts @get_address
-	# 	respond_to do |format|
-	# 	  format.html
-	# 	  format.xml  { render :xml => @get_address }
-	# 	  format.json { render :json => @get_address }
-	# 	end
-	# end
+	def address_search
+			@location = params[:vacant_building][:searchLocation].upcase
+			@get_address = Geokit::Geocoders::GoogleGeocoder.geocode(@location)
+			# puts @get_address
+		respond_to do |format|
+		  format.html
+		  format.xml  { render :xml => @get_address }
+		  format.json { render :json => @get_address }
+		end
+	end
 	def intial_load
 		respond_to do |format|
 		  format.html
