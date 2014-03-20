@@ -89,7 +89,7 @@ class SearchController < ApplicationController
 			@lat = params[:vacant_building][:lat]	   
 		    @log = params[:vacant_building][:log]
 		    @vb_coor = [ @lat.to_f, @log.to_f]    
-			puts @vb_coor
+			# puts @vb_coor
 
 		
 		    # @vb = VacantBuilding.find_by(coordinates: [-76.5677218731, 39.2919877174])
