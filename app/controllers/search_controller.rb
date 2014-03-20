@@ -12,6 +12,7 @@ class SearchController < ApplicationController
 		begin
 		    # @vb = VacantBuilding.find_by(coordinates: [-76.5677218731, 39.2919877174])
 
+
 			@array = []
 			 
 			# VacantBuilding.limit(50).geo_near(@vb_coor).spherical
