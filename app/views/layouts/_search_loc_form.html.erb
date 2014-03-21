@@ -1,8 +1,0 @@
-<%= form_for( VacantBuilding.new, :url => "search",:method => :get, :remote => true) do |f| %>
-  <%= f.label "lat" %>
-  <%= f.text_field :lat, value: "-76.6331659571" %>
-   <%= f.label "long" %>
-  <%= f.text_field :log, value: "39.2973522251" %>
-  <%= f.submit "Find Details" , id: "submitter" %>
-<% end %>
-<div id="search-location"> </div>

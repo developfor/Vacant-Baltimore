@@ -1,6 +1,0 @@
-<%= form_for( VacantBuilding.new, :url => "search",:method => :get, :remote => true) do |f| %>
-  <%= f.label :fullAddress %>
-  <%= f.text_field :fullAddress, value: "13 W MOUNT VERNON PL" %>
- 
-  <%= f.submit "Find Details" , id: "submitter" %>
-<% end %>
