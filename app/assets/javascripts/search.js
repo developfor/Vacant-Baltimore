@@ -11,7 +11,7 @@ var vbIcon = L.divIcon({
 	 // L.tileLayer('http://b.sm.mapstack.stamen.com/toner/{z}/{x}/{y}.png', {
 
 
-	 map = L.map('map',{zoomControl:false});
+	 map = L.map('map',{zoomControl:false, keyboard: false});
 	 new L.control.zoom({position: 'topright'}).addTo(map);
 	// marker cluster
 	 var markers = new L.MarkerClusterGroup({
@@ -19,7 +19,7 @@ var vbIcon = L.divIcon({
         animateAddingMarkers:true,
         maxClusterRadius: 40,
         chunkedLoading: true,
-        disableClusteringAtZoom: 15
+        disableClusteringAtZoom: 15,
      });
 
 
@@ -151,6 +151,7 @@ var vbIcon = L.divIcon({
 		});
 		
 	});
+
 
 
 }
