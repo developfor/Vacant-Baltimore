@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Baltimore's Vacant Buildings</title>
+  <link rel="shortcut icon" href="favicon.ico" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <% if current_page?(:controller => 'search', :action => 'index') %>
+  	<script type="text/javascript"> alert("hello"); </script>
+  	<% end %>
+  	
   <%= javascript_include_tag "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>

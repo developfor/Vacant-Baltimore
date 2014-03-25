@@ -4,6 +4,7 @@ Vb::Application.routes.draw do
   get "search/index"
   get "search/load_markers" 
   get "search/address_search"
+  get "search/big_map"
 
   match 'search', to: 'search#index'
 
