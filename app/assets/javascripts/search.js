@@ -1,3 +1,4 @@
+(function ( $ ) {
 var vbFuction = function(){
 var vbIcon = L.divIcon({
 	className: 'svg-marker',
@@ -169,5 +170,5 @@ $.getJSON('/search/load_markers.json?utf8=%E2%9C%93&vacant_building%5Blat%5D=-76
 	vbFuction();
 
 });
-
+}( jQuery ));
 
