@@ -1,4 +1,5 @@
-(function(window, document, undefined){
+$(function() {
+
 
 var dataInsert = function(){
 
@@ -59,4 +60,4 @@ var dataInsert = function(){
 
 dataInsert();
 
-})(this, document);
+});
