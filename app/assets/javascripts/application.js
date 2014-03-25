@@ -13,26 +13,3 @@
 // = require jquery
 // = require jquery_ujs
 // = require_tree .
-$(function() {
-// $("#submitter").on("click", function(){
-	
-// 	console.log("hello");
- 
-// });
-
-
-// $("form").change(function() {
-//   console.log($(this).closest('form').serialize());
-// });
-
-
-// $("#submitter").click(function(){
-// 	var formserial = "search.json?" + $('form').serialize();
-//   $.get(formserial ,function(data,status){
-//     console.log(data);
-//     $("closeby").text(JSON.stringify(data));
-//     $("countcloseby").text(data.length);
-//     var formserial = [];
-//   });
-// });
-});
