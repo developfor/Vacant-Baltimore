@@ -1,0 +1,14 @@
+/*
+// vendors files
+*= require reset
+*= require leaflet
+*= require jquery.scrollbars
+
+
+// assets files
+*= require search/content/project
+*= require search/content/main
+*= require search/content/search
+*/
+
+

@@ -1,0 +1,9 @@
+<% if current_page?(:controller => 'search', :action => 'index') or current_page?('/search') or current_page?('/search/index') %>
+	<%= javascript_include_tag "search/index", :media => "all" %>
+	<%= stylesheet_link_tag    "search/index", :media => "all" %>
+<% end %>
+
+<% if current_page?(:controller => 'search', :action => 'big_map') %>
+	<%= javascript_include_tag "search/big_map", :media => "all" %>
+	<%= stylesheet_link_tag    "search/big_map", :media => "all" %>
+<% end %>
