@@ -22,7 +22,7 @@ class SearchController < ApplicationController
 			
 			@array = []
 			 
-			VacantBuilding.limit(200).geo_near(@vb_coor)
+			VacantBuilding.limit(300).geo_near(@vb_coor)
 			.each do |document|
 				@array << document
 			end	

@@ -9,7 +9,7 @@
 $("#submitter").on("click", function(){
 	console.log($('#vacant_building_searchLocation').serialize())
 	
-	$.getJSON('search/address_search?utf8=%E2%9C%93&'+$('#vacant_building_searchLocation').serialize()+'&commit=Find+Details', function(result) {
+	$.getJSON('../search/address_search?utf8=%E2%9C%93&'+$('#vacant_building_searchLocation').serialize()+'&commit=Find+Details', function(result) {
 
 		
 		if(result["lng"] != null){

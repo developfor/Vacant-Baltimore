@@ -20,7 +20,7 @@ var vbIcon = L.divIcon({
         animateAddingMarkers:true,
         maxClusterRadius: 40,
         chunkedLoading: true,
-        disableClusteringAtZoom: 15,
+        disableClusteringAtZoom: 17,
      });
 
 
@@ -68,7 +68,7 @@ var vbIcon = L.divIcon({
             	// setTimeout($("#intro-text").html(imgLocation), 20000);
 
 
-            	var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
+            	var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=250x300&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
 
 				$(imgLocation).load(function() {
 				    // alert('Image Loaded');
@@ -132,7 +132,7 @@ var vbIcon = L.divIcon({
      //        		$("#intro-text").html(imgLocation);
      				
 
-				     var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
+				     var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=250x300&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
 
 				     $(imgLocation).load(function() {
 								    var imgLoc = imgLocation[0].outerHTML;

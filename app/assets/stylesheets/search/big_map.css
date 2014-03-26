@@ -6,8 +6,7 @@
 
 
 // assets files
-*= require search/content/project
-*= require search/content/main
+// require search/content/main
 *= require search/content/search_big_map
 */
 
