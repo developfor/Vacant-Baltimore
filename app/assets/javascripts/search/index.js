@@ -10,6 +10,4 @@
 // = require search/contents/main
 // = require search/contents/search
 
-//touch punch last
-// = require jquery.ui.touch-punch.min
 
