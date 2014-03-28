@@ -1,5 +1,6 @@
 class VacantBuilding
   include Mongoid::Document
+
   # store_in database: "vb"
   # store_in collection: "vacant_buildings"
   

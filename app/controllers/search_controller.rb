@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  
 	def index
 
 	end
@@ -15,7 +16,6 @@ class SearchController < ApplicationController
 
 
 	def load_markers
-		
 			@lat = params[:vacant_building][:lat]	   
 		    @log = params[:vacant_building][:log]
 		    @vb_coor = [ @lat.to_f, @log.to_f]    
@@ -24,8 +24,15 @@ class SearchController < ApplicationController
 			 
 			VacantBuilding.limit(300).geo_near(@vb_coor)
 			.each do |document|
-				@array << document
+
+				document = { coordinates: document[:coordinates], noticeDate: document[:noticeDate], fullAddress: document[:fullAddress] }
+
+
+				 @array << document
+
+				# p @array.inspect()
 			end	
+						# http_basic_authenticate_with name: "bob", password: "sup";
 
 
 			respond_to do |format|
