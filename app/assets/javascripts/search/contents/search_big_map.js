@@ -104,8 +104,8 @@ var vbIcon = L.divIcon({
 
 	map.on("dragend", function(){	
 
-		var lat = map.getCenter()["lat"]
-		var log =  map.getCenter()["lng"]
+		var lat = map.getCenter()["lat"].toFixed(5);
+		var log =  map.getCenter()["lng"].toFixed(5);
 
 		var markers = new L.MarkerClusterGroup({
         showCoverageOnHover: false,
@@ -185,7 +185,7 @@ var geojsonFeature;
 
 
 // $.getJSON('/search.json?utf8=%E2%9C%93&vacant_building%5Blat%5D=-76.6331659571&vacant_building%5Blog%5D=39.2973522251', function(result) {
-$.getJSON('/search/load_markers.json?utf8=%E2%9C%93&vacant_building%5Blat%5D=-76.6331659571&vacant_building%5Blog%5D=39.2973522251', function(result) {
+$.getJSON('/search/load_markers.json?utf8=%E2%9C%93&vacant_building%5Blat%5D=-76.63316&vacant_building%5Blog%5D=39.29735', function(result) {
 
 	// preloader end
 	// $(".spinner-loader").hide();

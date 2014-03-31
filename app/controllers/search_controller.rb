@@ -35,6 +35,7 @@ class SearchController < ApplicationController
 
 			@lat = params[:vacant_building][:lat]	   
 		    @log = params[:vacant_building][:log]
+
 		    @vb_coor = [ @lat.to_f, @log.to_f]    # center of map		
 			@array = []
 			 
@@ -47,11 +48,11 @@ class SearchController < ApplicationController
 				document = { 
 					coordinates: [lat, log], 
 					noticeDate: document[:noticeDate], 
-					fullAddress: document[:fullAddress].titleize, 
-					neighborhood: document[:neighborhood].titleize, 
+					fullAddress: document[:fullAddress].to_s.titleize, 
+					neighborhood: document[:neighborhood].to_s.titleize, 
 					councilDistrict: document[:councilDistrict], 
-					policeDistrict: document[:policeDistrict].titleize, 
-					blockLot: document[:blockLot].titleize
+					policeDistrict: document[:policeDistrict].to_s.titleize, 
+					blockLot: document[:blockLot].to_s.titleize
 				}
 					
 				 @array << document
