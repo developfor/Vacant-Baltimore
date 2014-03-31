@@ -58,7 +58,7 @@ var vbIcon = L.divIcon({
 
 				$(".sub-subtitle").html(
 						"<div class='border'></div>" +
-						"<b class='details'>Details</b><br> " + 
+						"<div class='details'>Details</div> " + 
 						"<div class='border'></div>" +
 						"<b>Full Address:</b> " + entry["fullAddress"] + "<br>"+
 						"<b>Notice Date:</b> " + entry["noticeDate"] + "<br>"+
@@ -80,7 +80,7 @@ var vbIcon = L.divIcon({
             	// setTimeout($("#intro-text").html(imgLocation), 20000);
 
 
-            	var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=310x220&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
+            	var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=310x220&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false&key=AIzaSyDJZz34WnJS8EH8tJwzAGf-ZaDbwaA6S1Q'>");
 
 				$(imgLocation).load(function() {
 				    // alert('Image Loaded');
@@ -140,7 +140,7 @@ var vbIcon = L.divIcon({
 
 					$(".sub-subtitle").html(
 					"<div class='border'></div>" +
-						"<b class='details'>Details</b><br> " + 
+						"<div class='details'>Details</div> " + 
 						"<div class='border'></div>" +
 						"<b>Full Address:</b> " + entry["fullAddress"] + "<br>"+
 						"<b>Notice Date:</b> " + entry["noticeDate"] + "<br>"+
@@ -156,7 +156,7 @@ var vbIcon = L.divIcon({
      //        		$("#intro-text").html(imgLocation);
      				
 
-				     var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=310x220&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
+				     var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=310x220&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false&key=AIzaSyDJZz34WnJS8EH8tJwzAGf-ZaDbwaA6S1Q'>");
 
 				     $(imgLocation).load(function() {
 								    var imgLoc = imgLocation[0].outerHTML;
