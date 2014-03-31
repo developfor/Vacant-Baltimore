@@ -16,30 +16,52 @@ class SearchController < ApplicationController
 
 
 	def load_markers
+			# puts "councilDistrict: 1 is the amount: #{VacantBuilding.where(councilDistrict: 1).count}"
+		 #    puts "councilDistrict: 2 is the amount: #{VacantBuilding.where(councilDistrict: 2).count}"
+		 #    puts "councilDistrict: 3 is the amount: #{VacantBuilding.where(councilDistrict: 3).count}"
+		 #    puts "councilDistrict: 4 is the amount: #{VacantBuilding.where(councilDistrict: 4).count}"
+		 #    puts "councilDistrict: 5 is the amount: #{VacantBuilding.where(councilDistrict: 5).count}"
+		 #    puts "councilDistrict: 6 is the amount: #{VacantBuilding.where(councilDistrict: 6).count}"
+		 #    puts "councilDistrict: 7 is the amount: #{VacantBuilding.where(councilDistrict: 7).count}"
+		 #    puts "councilDistrict: 8 is the amount: #{VacantBuilding.where(councilDistrict: 8).count}"
+		 #    puts "councilDistrict: 9 is the amount: #{VacantBuilding.where(councilDistrict: 9).count}"
+		 #     puts "councilDistrict: 10 is the amount: #{VacantBuilding.where(councilDistrict: 10).count}"
+		 #      puts "councilDistrict: 11 is the amount: #{VacantBuilding.where(councilDistrict: 11).count}"
+		 #       puts "councilDistrict: 12 is the amount: #{VacantBuilding.where(councilDistrict: 12).count}"
+		 #        puts "councilDistrict: 13 is the amount: #{VacantBuilding.where(councilDistrict: 13).count}"
+		 #         puts "councilDistrict: 14 is the amount: #{VacantBuilding.where(councilDistrict: 14).count}"
+
+
+
 			@lat = params[:vacant_building][:lat]	   
 		    @log = params[:vacant_building][:log]
-		    @vb_coor = [ @lat.to_f, @log.to_f]    
-			
+		    @vb_coor = [ @lat.to_f, @log.to_f]    # center of map		
 			@array = []
 			 
 			VacantBuilding.limit(300).geo_near(@vb_coor)
 			.each do |document|
 
-				document = { coordinates: document[:coordinates], noticeDate: document[:noticeDate], fullAddress: document[:fullAddress] }
+				lat = document[:coordinates][0].round(5) # round up lat
+				log = document[:coordinates][1].round(5) # round up log
 
-
+				document = { 
+					coordinates: [lat, log], 
+					noticeDate: document[:noticeDate], 
+					fullAddress: document[:fullAddress].titleize, 
+					neighborhood: document[:neighborhood].titleize, 
+					councilDistrict: document[:councilDistrict], 
+					policeDistrict: document[:policeDistrict].titleize, 
+					blockLot: document[:blockLot].titleize
+				}
+					
 				 @array << document
 
-				# p @array.inspect()
 			end	
-						# http_basic_authenticate_with name: "bob", password: "sup";
-
 
 			respond_to do |format|
 			  format.html
 			  format.xml  { render :xml => @array, status: :ok }
 			  format.json { render :json => @array, status: :ok }
-			  # format.json { render status: 200, json: @array.to_json}
 
 			end
 		

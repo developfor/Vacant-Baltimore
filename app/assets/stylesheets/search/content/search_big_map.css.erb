@@ -34,19 +34,32 @@ html, body{
 .wrapper{
 	margin: 0 auto;
 	width: 960px;
-	height: 750px;
+	height: 580px;
 	-webkit-border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	border-radius: 5px; 
 	border: 2px solid #C9C9C9;
 	position: relative;
 	background-color: #FFF;
+	margin-top: 20px;
 }
+
 .title{
 margin-top: 0px;
 background-color: #2E5879;
 height: 50px;
 color: white;
+}
+
+.wrapper-title{
+width: 960px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+
+.wrapper-title h1{
+	float: left;
 }
 
 .subtitle{
@@ -56,6 +69,24 @@ margin-top: 5px;
 margin-top: 2px;
 }
 
+#intro-text h5{
+	font-size: 20px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+border: 2px solid #C9C9C9;
+padding: 6px;
+text-align: center;
+background-color: #2E5879;
+color: #FFF;
+}
+
+.border{
+	border: 1.5px solid #C9C9C9;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+}
 
 p{
  font-size: 12px ;
@@ -78,18 +109,24 @@ h2{
 
 .title h1{
 	font-weight: bold;
+line-height: 50px;
+font-size: 25px;
+margin-left: 10px;
 }
 
-#viz{
-	height: 230px;
-	width: 250px;
-	background: #FFC0CB;
-	margin: 0 auto;
+.sub-text {
+	margin-left: 10px;
+   	float: left;
+	margin-top: 10px;
+	width: 300px;
 }
-
-#viz svg{
-	margin:0px auto;
-	display: block;
+.sub-text h2 {
+	text-align: left;
+	font-size: 16px;
+    line-height: 23px;
+}
+.details{
+	font-size: 20px;
 }
 
 #footer{
@@ -101,8 +138,8 @@ h2{
 
 #logo-area{
 	position: absolute;
-	left: 170px;
-	bottom: 40px;
+	right: 10px;
+    bottom: 40px;
 }
 
 #logo{
@@ -165,6 +202,17 @@ h2{
 	width: 100%;
 	
 	overflow: hidden;
+}
+
+
+.location-pic{
+border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	overflow: hidden;
+	width: 300px;
+	height: 220px;
+	border: 2px solid #C9C9C9;
 }
 
 .scroll-text{
@@ -306,8 +354,9 @@ h2{
 
 
 #map{
-	width:650px;
-	height: 620px;
+	width: 620px;
+	/*height: 480px;*/
+	height: 510px;
 	background: #2E5879;
 	margin-bottom: 10px;
 	margin-top: 10px;
@@ -350,11 +399,12 @@ height: 20px;*/
 }
 
 #intro-text{
-	margin-top: 10px;
+margin-top: 10px;
 z-index: 0;
 position: relative;
-width: 250px;
+width: 305px;
 float: left;
+margin-left: 10px;
 }
 
 .leaflet-popup-content-wrapper {
@@ -366,7 +416,7 @@ border-radius: 5px !important;
 	-webkit-appearance: none;
 	--moz-appearance: none;
 margin: 0 auto;
-width: 202px;
+width: 555px;
 height: 20px;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
@@ -374,12 +424,13 @@ border-radius: 5px;
 border: 2px solid #C9C9C9;
 position: relative;
 background-color: #FFF;
-padding: 1px;
-
-
+padding: 6px;
+margin-left: 10px;
+margin-top: 10px;
+font-size: 20px;
 }
 .new_vacant_building{
-	margin-left: 8px;
+	/*margin-left: 8px;*/
 }
 
 
@@ -397,8 +448,13 @@ height: 26px;
 text-align: center;
 line-height: 20px;
 width: 42px;
+height: 36px;
 text-decoration: none;
 border-radius: 5px;
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
+position: absolute;
+top: 10px;
+margin-left: 10px;
+
 }

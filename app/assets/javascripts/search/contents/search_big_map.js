@@ -28,7 +28,7 @@ var vbIcon = L.divIcon({
 
     var osmAttrib = 'Tiles courtesy of Stamen.';
     var osm = new L.TileLayer(osmUrl, {
-        minZoom: 10,
+        minZoom: 12,
         maxZoom: 20,
         attribution: osmAttrib
     });
@@ -56,7 +56,19 @@ var vbIcon = L.divIcon({
 			marker.on('click', function(){
 
 
-				$(".sub-subtitle").html(entry["fullAddress"]+ "<br>"+ "<b>Vacant Since:</b> "+ entry["noticeDate"] );
+				$(".sub-subtitle").html(
+						"<div class='border'></div>" +
+						"<b class='details'>Details</b><br> " + 
+						"<div class='border'></div>" +
+						"<b>Full Address:</b> " + entry["fullAddress"] + "<br>"+
+						"<b>Notice Date:</b> " + entry["noticeDate"] + "<br>"+
+						"<b>Block Lot:</b> " + entry["blockLot"] + "<br>"+
+						"<b>Council District:</b> " + entry["councilDistrict"] + "<br>"+
+						"<b>Police District:</b> " + entry["policeDistrict"] + "<br>"+
+						"<b>Neighborhood:</b> " + entry["neighborhood"] + "<br>"+
+						"<b>Latitude:</b> " + entry["coordinates"][0] + "<br>"+
+						"<b>Longitude:</b> " + entry["coordinates"][1]
+					);
 				// console.log(entry["fullAddress"]);
 				// console.log(this.options)
 				// var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.latitude+","+this.options.longitude+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
@@ -68,13 +80,13 @@ var vbIcon = L.divIcon({
             	// setTimeout($("#intro-text").html(imgLocation), 20000);
 
 
-            	var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=250x300&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
+            	var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=310x220&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
 
 				$(imgLocation).load(function() {
 				    // alert('Image Loaded');
 				    // console.log(imgLocation);
 				    var imgLoc = imgLocation[0].outerHTML;
-            		$("#intro-text").html("<div class='location-pic'>"+ imgLoc + "</div> ");
+            		$("#intro-text").html("<div class='location-pic'>"+ imgLoc + "</div>");
 
 
 				});
@@ -126,13 +138,25 @@ var vbIcon = L.divIcon({
 
 					// console.log(entry["fullAddress"])
 
-					$(".sub-subtitle").html(entry["fullAddress"]+ "<br>"+entry["noticeDate"]);
+					$(".sub-subtitle").html(
+					"<div class='border'></div>" +
+						"<b class='details'>Details</b><br> " + 
+						"<div class='border'></div>" +
+						"<b>Full Address:</b> " + entry["fullAddress"] + "<br>"+
+						"<b>Notice Date:</b> " + entry["noticeDate"] + "<br>"+
+						"<b>Block Lot:</b> " + entry["blockLot"] + "<br>"+
+						"<b>Council District:</b> " + entry["councilDistrict"] + "<br>"+
+						"<b>Police District:</b> " + entry["policeDistrict"] + "<br>"+
+						"<b>Neighborhood:</b> " + entry["neighborhood"] + "<br>"+
+						"<b>Latitude:</b> " + entry["coordinates"][0] + "<br>"+
+						"<b>Longitude:</b> " + entry["coordinates"][1]
+						);
 					// var imgLocation = "<div class='location-pic'><img src='http://maps.googleapis.com/maps/api/streetview?size=250x120&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'></div> ";
 					// // console.log(this.options.lat);
      //        		$("#intro-text").html(imgLocation);
      				
 
-				     var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=250x300&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
+				     var imgLocation = $("<img src='http://maps.googleapis.com/maps/api/streetview?size=310x220&location="+this.options.lat+","+this.options.log+"&fov=90&heading=225&pitch=10&sensor=false'>");
 
 				     $(imgLocation).load(function() {
 								    var imgLoc = imgLocation[0].outerHTML;

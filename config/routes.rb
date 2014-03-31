@@ -1,9 +1,10 @@
 Vb::Application.routes.draw do
-  root to: 'search#index'
+  root to: 'search#big_map'
   
   get "search/index"
   get "search/load_markers" 
   get "search/address_search"
+  get "search/search/address_search"
   get "search/big_map"
 
   match 'search', to: 'search#index'
