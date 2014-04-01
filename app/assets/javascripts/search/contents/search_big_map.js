@@ -28,7 +28,7 @@ var vbIcon = L.divIcon({
 
     var osmAttrib = 'Tiles courtesy of Stamen.';
     var osm = new L.TileLayer(osmUrl, {
-        minZoom: 12,
+        minZoom: 13,
         maxZoom: 20,
         attribution: osmAttrib
     });
